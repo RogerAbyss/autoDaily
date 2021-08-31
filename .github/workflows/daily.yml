@@ -27,4 +27,4 @@ jobs:
             -   name: Sign Game-SG0
                 env:
                     SG0_TOKEN: ${{ secrets.SG0_TOKEN }}
-                run: python main.py
+                run: python app.py
