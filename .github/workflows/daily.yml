@@ -1,16 +1,30 @@
-name: daily
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-on:  
-  push:    
-    branches:
-      - main
+name: Python application
 
+on:
+    schedule:
+        -   cron: '5 16 * * *'
+    workflow_dispatch:
+    watch:
+        types: [ started ]
+env:
+    TZ: Asia/Shanghai
 jobs:
-    setup1:
-      runs-on: ubuntu-latest
-      steps:
-        - name: test
-          uses: actions/setup-python@v2
-          with:
-            python-version: '3.7'
-        - run: echo test
+    run:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v2
+            -   name: Set up Python 3.7
+                uses: actions/setup-python@v2
+                with:
+                    python-version: 3.7
+            -   name: Install dependencies
+                run: |
+                    python -m pip install --upgrade pip
+                    pip install requests
+            -   name: Sign Game-SG0
+                env:
+                    SG0_TOKEN: ${{ secrets.SG0_TOKEN }}
+                run: python main.py
