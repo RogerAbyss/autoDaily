@@ -1,0 +1,16 @@
+name: daily
+
+on:  
+  push:    
+    branches:
+      - main
+
+jobs:
+    setup1:
+      runs-on: ubuntu-latest
+      steps:
+        - name: test
+          uses: actions/setup-python@v2
+          with:
+            python-version: '3.7'
+        - run: echo test
