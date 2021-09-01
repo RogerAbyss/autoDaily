@@ -28,4 +28,6 @@ jobs:
                 env:
                     SG0_TOKEN: ${{ secrets.SG0_TOKEN }}
                     ROBOT: ${{ secrets.ROBOT }}
+                    TX_API: ${{ secrets.TX_API }}
+                    XZ_API: ${{ secrets.XZ_API }}
                 run: python app.py
