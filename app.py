@@ -56,7 +56,7 @@ def get_holiday(api, today):
 def get_limit(today):
 #     weekday_s = today.strftime("%A")
 
-    limit = ["周一: 1,6", "周二: 2,7", "周三: 3,8", "周四: 4,9", "周五: 5,0"]
+    limit = ["周一: 1,6", "周二: 2,7", "周三: 3,8", "周四: 4,9", "周五: 5,0", "周六: 不限行", "周日: 不限行"]
 
     if today.weekday() == 4:
         limit_s = "限行"
