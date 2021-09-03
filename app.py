@@ -56,14 +56,14 @@ def get_holiday(api, today):
 def get_limit(today):
 #     weekday_s = today.strftime("%A")
 
-    limit = ["周一: 1,6", "周二: 2,7", "周三: 3,8", "周四: 4,9", "周五: 5,0", "周六: 不限行", "周日: 不限行"]
+    limit = ["周一: 1,6", "周二: 2,7", "周三: 3,8", "周四: 4,9", "周五: 5,0", "周六: 不限行", "周日: 不限行", "ERROR", "ERROR"]
 
     if today.weekday() == 4:
         limit_s = "限行"
     else:
         limit_s = "不限行"
 
-    weekday = today.weekday() + 1
+    weekday = today.weekday()
     limit = '重庆限行: ' + limit_s + '(' + limit[weekday] + ')' + '\n'
     print('[重庆限行]', limit)
     return limit
