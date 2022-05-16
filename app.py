@@ -151,7 +151,7 @@ def auto_sign_youyun666(email, passwd):
 
     print('[优云666] 签到:\n', res_sign.json())
 
-    sign_ret = '自动签到:[优云666] ' + '<' + email + '>' + res_sign.json()['msg'] + '\n'
+    sign_ret = '\n' + '自动签到:[优云666] ' + '<' + email + '>' + res_sign.json()['msg'] + '\n'
 
     # 详情
     api_user = 'https://youyun222.net/user'
