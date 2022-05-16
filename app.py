@@ -20,7 +20,7 @@ import datetime
 # email
 # ========================
 
-debug=True
+debug=False
 
 def get_enviroment(key):
     """
