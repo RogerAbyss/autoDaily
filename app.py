@@ -34,7 +34,7 @@ def get_enviroment(key):
         import config as config
         return config.env[key]
     else:
-        return os.environ(key)
+        return os.environ.get(key)
 
 def get_weather(api, city='chongqing'):
     """
